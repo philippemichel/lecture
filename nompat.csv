@@ -1,0 +1,19 @@
+code,nom
+type,Type d’admission
+alité avant,Alité 7 jours avant
+age,Âge
+taille,Taille
+sexe,Sexe
+poids,Poids
+igs,IGS 2
+albumine,Albumine
+crp,CRP
+choc,État de choc
+ventilation,Ventilation assitée
+sédation,Sédation
+corticoïdes,Corticoïdes
+curares,Curares
+déficit neuro,Déficit neurologique
+nutrition,Nutrition
+adm.escarre,Escarre à l’admission
+escarrej,Escarre 
