@@ -1,29 +1,30 @@
 ---
 title: "Écrire sa thèse sans se fatiguer"
 subtitle: "C'est possible"
-author: "Philippe MICHEL" 
 logo: "images/novo_usrc.png"
-institute: "USRC - Hôpital NOVO"
 lang: fr
+format: 
+  revealjs: 
+     theme: simple
+     embed-resources: false
+author:
+  - name: "Philippe MICHEL"
+    affiliations: "USRC - Hôpital NOVO"
+date: last-modified
 project:
   type: website
   output-dir: "docs"
-format: 
-  revealjs: 
-     theme: ["simple"]
-     embed-resources: false
-# chalkboard: true
 highlight-style: ayu-dark
 echo: false
 warning: false
 message: false
 cache: false
+editor: 
+  markdown: 
+    wrap: 72
 ---
 
-
 # De quoi on parle ? {background-color="lightblue"}
-
-
 
 ```{r}
 #| label: intro
@@ -39,27 +40,29 @@ library(janitor)
 tt <- read_delim("patients.csv",show_col_types = FALSE) |> 
   drop_na(escarrej) |> 
   clean_names()
+#
+theme_gtsummary_language(language = "fr", decimal.mark = ",")
+theme_gtsummary_journal(journal = "jama")
+options(OutDec = ",")
 ```
 
+## Une idée, une thèse :
 
-## Une idée, une thèse : 
 <BR>
-  
+
 > **Un sujet** Facteurs de risque d'escarre en réanimation<br>
 
-> **Une question** État avant ?<br>
+> **Une question** État avant ?
 
-> **Un critère** Alitement prolongé (> 7j)<br>
+> **Un critère** Alitement prolongé (\> 7j)
 
 > **Des outils** inadaptés
 
-## Au travail !{.center}
+## Au travail ! {.center}
 
 ![](images/neurobiology.jpeg)
 
-
-## Ordre du travail{.smaller}
-
+## Ordre du travail {.smaller}
 
 ```{r ordre}
 nn <- 1:7
@@ -72,96 +75,89 @@ dd <- data.frame(nn,tr,ch)
 position = "center")
 ```
 
-
 ## Pressure Ulcer ICU
 
-&nbsp;
+ 
 
-:::: {.columns}
-
+::::: columns
 ::: {.column width="48%"}
- ![](images/help.png)
+![](images/help.png)
 :::
 
-::: {.column width="50%} 
-**GOOGLE**
-7 640 000  références
+::: {.column width="\"50%"}
+**GOOGLE** 7 640 000 références
 
-**GOOGLE SCHOLAR**
-34 000 références
+**GOOGLE SCHOLAR** 34 000 références
 
-**MEDLINE**
-679 références
+**MEDLINE** 679 références
 
-**+ filtres**
-176 références
+**+ filtres** 176 références
 :::
+:::::
 
-::::
-
-# Que lire ?
-
+# Que lire ? {background-color="lightblue"}
 
 ## Article original
 
 ![](images/grasso02.png)
 
-- Le plus intéressant
-- Présente les résultats d'un travail original
-- *Proposé par l'auteur à la revue*
-- Souvent très (trop ?) pointu
- 
+-   Le plus intéressant
+-   Présente les résultats d'un travail original
+-   *Proposé par l'auteur à la revue*
+-   Souvent très (trop ?) pointu
 
 ## Proposé par l'auteur ?
 
-&nbsp;
+ 
 
 **Et si on changeait les critères ?**
 
-&nbsp;
+ 
 
-:::{.callout-tip}
+::: callout-tip
 ## ClinicalTrial.gov
 
-- Dépôt des points principaux d'un essai **avant le début de l'étude**
-- Quasi obligatoire
+-   Dépôt des points principaux d'un essai **avant le début de l'étude**
+-   Quasi obligatoire
 :::
 
-
-
 ## Revue de la littérature {.smaller}
-**Comparison of early versus late initiation of renal replacement therapy in critically ill patients with acute kidney injury: a systematic review and meta-analysis.**\n Critical Care 2011, 15:R72
 
-&nbsp;
-  
- **Conclusion** Earlier institution of RRT in critically ill patients with AKI may have a beneficial impact on survival. However, this conclusion is based on heterogeneous studies of variable quality and only two randomized trials. In the absence of new evidence from suitably-designed randomized trials, a definitive treatment recommendation cannot be made.
+**Comparison of early versus late initiation of renal replacement
+therapy in critically ill patients with acute kidney injury: a
+systematic review and meta-analysis.**\n Critical Care 2011, 15:R72
 
+ 
 
+**Conclusion** Earlier institution of RRT in critically ill patients
+with AKI may have a beneficial impact on survival. However, this
+conclusion is based on heterogeneous studies of variable quality and
+only two randomized trials. In the absence of new evidence from
+suitably-designed randomized trials, a definitive treatment
+recommendation cannot be made.
 
 ## Méta-analyse
-  <BR>
-  
-  ![](images/meta.png) 
 
+<BR>
+
+![](images/meta.png)
 
 ## Conférence de consensus
 
 ### Recommendations Formalisées d'experts
 
-&nbsp;
-  
+ 
+
 ![](images/usine.png)
 
-  
-- Revue de la littérature qui se veut exhaustive
-- Plusieurs auteurs donc plus objective ?
-- Mises à jour prévues.
-
+-   Revue de la littérature qui se veut exhaustive
+-   Plusieurs auteurs donc plus objective ?
+-   Mises à jour prévues.
 
 **Evidence Based Medicine**
 
-# Niveaux de preuve {.smaller}
-  
+## Niveaux de preuve {.smaller}
+
 ```{r}
 aa <- 1:5
 dd <- c("Grands essais comparatifs randomisés avec résultats méthodologiquement indiscutables",
@@ -181,222 +177,226 @@ position = "center")
 ## Conférence d'experts
 
 ### La conf. de consensus du pauvre
+
 <BR>
-  
-::::{.columns}
-:::{.column width="60%"} 
- 
-- Que valent les *experts* ???
-- **Niveau C**
+
+::::: columns
+::: {.column width="60%"}
+-   Que valent les *experts* ???
+-   **Niveau C**
 :::
-:::{.column width="39%"}
-  <BR>
- ![](images/experts.png){.r-stretch}
+
+::: {.column width="39%"}
+<BR> ![](images/experts.png){.r-stretch}
 :::
-::::
+:::::
 
 ## Où chercher ?
 
-
- ![](images/pubmed.jpg){.absolute top="180" right="30" width="80%"}
-  
+![](images/pubmed.jpg){.absolute top="180" right="30" width="80%"}
 
 ## Système de recherche
-  
-::::{.columns}
-:::{.column width="60%"} 
- 
-&nbsp;
+
+::::: columns
+::: {.column width="60%"}
+ 
 
 ### Descripteurs MESH
-- Plus complexe, plus précise.
+
+-   Plus complexe, plus précise.
 
 ### par Mots-clefs
+
 *Méthode par défaut*
 
-- Rapide, simple
-- Mots clefs ?
+-   Rapide, simple
+-   Mots clefs ?
 :::
-:::{.column width="39%"} 
 
-  ![](images/bib2.jpg)
+::: {.column width="39%"}
+![](images/bib2.jpg)
 :::
-::::
-   
-##  {background-color="grey10" 
-   background-image="images/pubmed2.png" 
-   background-size="100%"}
-   
-##  {background-color="grey10" 
-   background-image="images/pubmed3.png" 
-   background-size="100%"}
+:::::
 
-##  {background-color="grey10" 
-   background-image="images/google.png" 
-   background-size="100%"}
+##  {background-color="grey10" background-image="images/pubmed2.png" background-size="100%"}
 
-##  {background-color="grey10" 
-   background-image="images/zotero.png" 
-   background-size="100%"}
-   
-##  {background-color="grey10" 
-   background-image="images/scihub.png" 
-   background-size="100%"}
+##  {background-color="grey10" background-image="images/pubmed3.png" background-size="100%"}
+
+##  {background-color="grey10" background-image="images/google.png" background-size="100%"}
+
+##  {background-color="grey10" background-image="images/zotero.png" background-size="100%"}
+
+##  {background-color="grey10" background-image="images/scihub.png" background-size="100%"}
 
 ## Dernier contrôle
 
-&nbsp;
-  
-::::{.columns}
-:::{.column width="48%"} 
+ 
 
-
-![](images/joker.png) 
+::::: columns
+::: {.column width="48%"}
+![](images/joker.png)
 :::
-:::{.column width="48%"} 
 
+::: {.column width="48%"}
 ### Tout vous paraît correct ?
-  
+
 Il vous reste deux dernières chances
-  
-- **Correspondance**
-- **Éditorial**
+
+-   **Correspondance**
+-   **Éditorial**
 :::
-::::
- 
-# Quelle étude ?
+:::::
+
+# Quelle étude ? {background-color="lightblue"}
 
 ## Études contrôlées
-  
+
 ### Tout est sous contrôle
-  
-- Nb de patients
-- Qui reçoit quoi
-- Les mesures, surveillances
-- &hellip;
+
+-   Nb de patients
+-   Qui reçoit quoi
+-   Les mesures, surveillances
+-   …
 
 ## Randomisé en double aveugle
 
 #### BMJ 2003;327:1459
 
-:::: {.columns}
-
+::::: columns
 ::: {.column width="40%"}
-  ![](images/parachutes.jpg)
+![](images/parachutes.jpg)
 :::
 
 ::: {.column width="60%"}
- Parachute use to prevent death and major trauma related to gravitational challenge: systematic review of randomised controlled trials
+Parachute use to prevent death and major trauma related to gravitational
+challenge: systematic review of randomised controlled trials
 :::
-::::
+:::::
 
 ## Études contrôlées {.smaller}
 
-:::{.callout-warning icon="false"}
+::: {.callout-warning icon="false"}
 ## Études de molécules
-**ÉTUDE RANDOMISÉE CONTRE &hellip; EN DOUBLE AVEUGLE**
-:::
-&nbsp;
 
-:::{.callout-tip icon="false"}
+**ÉTUDE RANDOMISÉE CONTRE … EN DOUBLE AVEUGLE**
+:::
+
+ 
+
+::: {.callout-tip icon="false"}
 ## Autres modalités de traitement
-Études randomisée en simple aveugle&hellip;
-:::
-&nbsp;
 
-:::{.callout-caution icon="false"}
+Études randomisée en simple aveugle…
+:::
+
+ 
+
+::: {.callout-caution icon="false"}
 ## Méthodes diagnostiques
+
 Procédures spécifiques
 :::
 
-
 ## Études observationnelles
-  
-- Suivi de population (cohorte)
-- Études cas / témoins
-- Enquètes **one day**
-- Sondages
-- Études rétrospectives
 
+-   Suivi de population (cohorte)
+-   Études cas / témoins
+-   Enquètes **one day**
+-   Sondages
+-   Études rétrospectives
 
-## Un peu d'aide&hellip; {.smaller}
-  
+## Un peu d'aide… {.smaller}
+
 ### Thérapeutique
+
 > **CONSORT** CONsolidated Standards Of Reporting Trial
 
 ### Diagnostic
+
 > **STARD** Statement for Reporting Studies of Diagnostic Accurary
 
-### Études observationnelles 
-> **STROBE** Strengthening the Reporting of Observational Studies in Epidemiology
+### Études observationnelles
 
+> **STROBE** Strengthening the Reporting of Observational Studies in
+> Epidemiology
 
 ## STROBE
-  
-  ![](images/ex_strobe.png)
 
+![](images/ex_strobe.png)
 
 ## Éthique & Lois
 
-&nbsp;
+ 
 
-:::: {.columns}
-
+::::: columns
 ::: {.column width="40%"}
->**Comité d'Éthique**<BR>
->**CNIL**<BR>
-> **CPP**
+> **Comité d'Éthique**<BR> **CNIL**<BR> **CPP**
 :::
 
 ::: {.column width="60%"}
- ![](images/race.png)
+![](images/race.png)
 :::
-::::
-  
+:::::
 
 ## RIPH
 
 ![](images/riph.png)
 
-# On rédige
+# On rédige {background-color="lightblue"}
 
 ## IMRAD
 
 ### Plan immuable
 
-
-- **I**ntroduction
-- **M**ethods
-- **R**esults
-- **A**nd
-- **D**iscussion
- 
-
-
+-   **I**ntroduction
+-   **M**ethods
+-   **R**esults
+-   **A**nd
+-   **D**iscussion
 
 ## Introduction
-### Il était une fois&hellip;
+
+### Il était une fois…
 
 <BR>
-  
-- Motif du travail au vu de la littérature.<BR>
-- Les hypothèses
 
-# Matériel & Méthodes
+-   Motif du travail au vu de la littérature.<BR>
+-   Les hypothèses
+
+# Matériel & Méthodes {background-color="lightblue"}
 
 ## Tout doit y être précisé :
-  <br>
-  
-- Type de l'étude
-- Population
-- Traitements, méthodes diagnostiques&hellip;
-- Critères de jugement
-- Tests statistiques utilisés
 
-## du  Lourd {.smaller}
+<br>
 
-**Patient Selection** Twenty-two patients with ARDS were recruited from the intensive care units (ICUs) of the Di Venere, Policlinico (University of Bari), and S. Chiara (University of Pisa) hospitals. The review boards of ;all three hospitals approved the research protocol, and informed consent was obtained from all patients or next of kin. Inclusion criteria were age >18 yr and diagnosis of ARDS. Exclusion criteria were cardiogenic pulmonary edema (clinically suspected or pulmonary artery occlusion pressure > 18 mmHg), history of ventricular fibrillation or tachyarrhythmia, unstable angina or myocardial infarction within the preceding month, preexisting chronic obstructive pulmonary disease, mean arterial pressure
- (MAP) < 65 mmHg (despite attempts to increase blood pressure with fluid and vasopressors, as clinically indicated), anatomic chest wall abnormalities, chest tube with persistent air leak, pregnancy, and intracranial abnormality.<BR>All patients were intubated and ventilated with a Siemens Servo Ventilator 300 (Siemens Elema AB, Solna, Sweden). The investigation was performed in the semirecumbent position after sedation (diazepam, 0.1–0.2mg/kg, and fentanyl, 2–3{ng/Kg) and paralysis (vecuronium, 4–8 mg). A physician not involved in the research aspects of the study was always present to provide patient care.
+-   Type de l'étude
+-   Population
+-   Traitements, méthodes diagnostiques…
+-   Critères de jugement
+-   Tests statistiques utilisés
+
+## du Lourd {.smaller}
+
+**Patient Selection** Twenty-two patients with ARDS were recruited from
+the intensive care units (ICUs) of the Di Venere, Policlinico
+(University of Bari), and S. Chiara (University of Pisa) hospitals. The
+review boards of ;all three hospitals approved the research protocol,
+and informed consent was obtained from all patients or next of kin.
+Inclusion criteria were age \>18 yr and diagnosis of ARDS. Exclusion
+criteria were cardiogenic pulmonary edema (clinically suspected or
+pulmonary artery occlusion pressure \> 18 mmHg), history of ventricular
+fibrillation or tachyarrhythmia, unstable angina or myocardial
+infarction within the preceding month, preexisting chronic obstructive
+pulmonary disease, mean arterial pressure (MAP) \< 65 mmHg (despite
+attempts to increase blood pressure with fluid and vasopressors, as
+clinically indicated), anatomic chest wall abnormalities, chest tube
+with persistent air leak, pregnancy, and intracranial
+abnormality.<BR>All patients were intubated and ventilated with a
+Siemens Servo Ventilator 300 (Siemens Elema AB, Solna, Sweden). The
+investigation was performed in the semirecumbent position after sedation
+(diazepam, 0.1–0.2mg/kg, and fentanyl, 2–3{ng/Kg) and paralysis
+(vecuronium, 4–8 mg). A physician not involved in the research aspects
+of the study was always present to provide patient care.
 
 ## La science est reproductible
 
@@ -404,32 +404,33 @@ Procédures spécifiques
 
 ### 40 000 articles invalidés
 
+### ou 3 900…
 
-### ou 3 900&hellip;
+## Nombre de patients
 
-# Nombre de patients
 <br>
- 
-## Le calcul doit être fait a priori (*calcul de puissance*).
+
+### Le calcul doit être fait a priori (*calcul de puissance*).
+
 <br>
 
 **Strict minimum : 30 par groupe**
 
-
 > *N'a de sens que s'il y a un test principal avec une hypothèse claire*
 
 ## Faire du chiffre !
-:::{.callout-tip}
-## ISIS 2 
 
-Aspirine & reperfusion dans l'IdM en phase aiguë<br>
-Lancet 1986
+::: callout-tip
+## ISIS 2
+
+Aspirine & reperfusion dans l'IdM en phase aiguë<br> Lancet 1986
 
 **16 027 cas**
 :::
 
-:::{.callout-caution}
+::: callout-caution
 ## GUSTO I
+
 NEJM 1993
 
 Interêt de la reperfusion précoce dans l'IdM<br>
@@ -441,61 +442,65 @@ Interêt de la reperfusion précoce dans l'IdM<br>
 
 ![](images/grippe1.png)
 
-
 ## Grippe
 
 ![](images/grippe2.png)
 
-
-## Définir la population 
+## Définir la population
 
 ### 2 écueils possibles
 
-:::{.callout-tip}
+::: callout-tip
 ## Population très large
 
-- Tous les patients vus aux urgences pour douleur thoracique
-:::	
+-   Tous les patients vus aux urgences pour douleur thoracique
+:::
 
-:::{.callout-warning}
+::: callout-warning
 ## Population trop serrée
-- Patients de 40 à 75 ans,
-- douleur rétrosternale gauche <3 h
-- troponine > 50 mg/mL
+
+-   Patients de 40 à 75 ans,
+-   douleur rétrosternale gauche \<3 h
+-   troponine \> 50 mg/mL
 :::
 
 ## Les sous groupes ?
 
 > Aucune conclusion ne doit être portée sur un résultat de sous-groupe
 
-&nbsp;
+ 
 
 ### VS-AI vs CPAP dans l'OAP
 
-- Supériorité globale de la VS-AI;
-- Un sous groupe (IdM) s'aggravait en VS-AI&hellip;
-
+-   Supériorité globale de la VS-AI;
+-   Un sous groupe (IdM) s'aggravait en VS-AI…
 
 *Mehta 1997*
 
-
-
-
 ## Traitements utilisés
 
-&nbsp;
+ 
 
 ### Enfin de la clinique !
- 
- 
-- Vérifier si le traitement proposé est conforme à ce que vous attendiez, proche de votre pratique&hellip;
-- C'est le protocole que vous appliquerez si l'étude vous convainc.
+
+-   Vérifier si le traitement proposé est conforme à ce que vous
+    attendiez, proche de votre pratique…
+-   C'est le protocole que vous appliquerez si l'étude vous convainc.
 
 ## Partie statistique {.smaller}
 
 <br>
 
-**Statistics** Data are expressed as mean ± standard deviation of the mean. Data within groups were compared by analysis of variance for repeated measures with a *Bonferroni* correction. If significant (p < 0.05), the values at different experimental conditions were compared with those at baseline with use of a paired t test, as modified by Dunnett. Comparisons of data between groups were performed at each experimental condition by the Fisher exact test for categorical variables and the Wilcoxon test for continuous variables. Regression analysis was performed with the least-squares method. Analysis was carried out with the StatView software package (Abacus, Berkeley, CA).
+**Statistics** Data are expressed as mean ± standard deviation of the
+mean. Data within groups were compared by analysis of variance for
+repeated measures with a *Bonferroni* correction. If significant (p \<
+0.05), the values at different experimental conditions were compared
+with those at baseline with use of a paired t test, as modified by
+Dunnett. Comparisons of data between groups were performed at each
+experimental condition by the Fisher exact test for categorical
+variables and the Wilcoxon test for continuous variables. Regression
+analysis was performed with the least-squares method. Analysis was
+carried out with the StatView software package (Abacus, Berkeley, CA).
 
 ## Résultats
 
@@ -507,23 +512,21 @@ Interêt de la reperfusion précoce dans l'IdM<br>
 
 ### Rien que les résultats
 
- 
 ## Quelques tableaux
 
-&nbsp;
- 
-- Description de la population
-- Comparaison des deux groupes
+ 
+
+-   Description de la population
+-   Comparaison des deux groupes
 
 ## Quelques figures
 
-&nbsp;
+ 
 
- 
 ![](images/graphs.png)
 
-
 ## des petits dessins
+
 ```{r g1, fig.dim = c(14, 7), fig.align='center'}
 dd <- tt %>% 
   dplyr::select(age,sexe)
@@ -547,6 +550,7 @@ dd <- na.omit(dd)
 ```
 
 ## des petits dessins
+
 ```{r g1b, fig.dim = c(14, 7), fig.align='center'}
 dd <- tt %>% 
   dplyr::select(age,sexe)
@@ -594,92 +598,77 @@ ggplot(dd) +
 ```
 
 ## des petits dessins
+
 ```{r pyr, fig.dim = c(14, 7), fig.align='center'}
 pyramid(dd$age,dd$sexe,col.gender = c("pink","cyan"), main = "Pyramide des âges")
 ```
 
-## &nbsp; {background-color="grey10" background-image="images/graph1.png" background-size="70%"}
+##   {background-color="grey10" background-image="images/graph1.png" background-size="70%"}
 
-## &nbsp; {background-color="grey10" background-image="images/survie.png" background-size="88%"}
+##   {background-color="grey10" background-image="images/survie.png" background-size="88%"}
 
-## &nbsp; {background-color="grey10" background-image="images/minard.png" background-size="100%"}
- 
-# Discussion
+##   {background-color="grey10" background-image="images/minard.png" background-size="100%"}
 
-## Une revue de la littérature
+## Discussion
 
- Doit mettre en évidence les conclusions pratiques de l'étude mais aussi ses **points faibles**
-  <br>
-  
-  
-- Mon étude montre que &hellip; 
-- Mais elle a ses limites :
-   - Patients très âgés;
-   - &hellip; 
+ 
 
+Doit mettre en évidence les conclusions pratiques de l'étude mais aussi
+ses **points faibles** <br>
+
+-   Mon étude montre que …
+-   Mais elle a ses limites :
+    -   Patients très âgés;
+    -   …
+-   Les autres études montrent que …
 
 ## Conclusion
 
-::::{.columns}
-:::{.column width="48%"}
-  <BR>
-- Résumé de la discussion<BR>
-- Fin ouverte
+::::: columns
+::: {.column width="48%"}
+<BR> - Résumé de la discussion<BR> - Fin ouverte
 :::
-:::{.column width="48%"}
+
+::: {.column width="48%"}
 ![](images/fin.jpg)
 :::
-::::
+:::::
 
-
-# Des variables ?
+# Des variables ? {background-color="lightblue"}
 
 ## Mais quelle est la question ? {background-color="grey10" background-image="images/42.jpg" background-size="100%"}
 
-  
 ## VARIABLES
 
-
-
 > **Variable de tri** Escarre présente<BR> *OUI/NON*\n
-  
+
 > **Variable principale** Alitement prolongé *OUI/NON*
-  
+
 > **Variables explicatives** Age, Sexe, IGS II etc.
 
-
-
-
-
 # Liste de variables {.smaller}
-  
-  | |**nom**|**abrégé**|**type**|**valeurs**|
-  |--|--|--|--|--|
-  |1|Âge du patient|age|entier|18-110|
-  | 2|Date d'admission|dateadm|date|dd/mm/yyyy| 
-| 3|Sexe|sexe|facteur|F / M|
- |4|BMI |bmi|entier| 10-60 Kg/m<up>2</up>|
- |5|IGS II à l’admission|igsadm|entier|6-150|
- |6|Oxygénothérapie|oxy|entier|0-20 L/min|
- |7|Ventilation invasive|vi|facteur|oui/non|
-| 8|Sédation|sedation|facteur|oui/non|
- |9|Curarisation|curarisation|facteur|oui/non/nsp|
 
-
-
-
-
+|     | **nom**              | **abrégé**   | **type** | **valeurs**          |
+|-----|----------------------|--------------|----------|----------------------|
+| 1   | Âge du patient       | age          | entier   | 18-110               |
+| 2   | Date d'admission     | dateadm      | date     | dd/mm/yyyy           |
+| 3   | Sexe                 | sexe         | facteur  | F / M                |
+| 4   | BMI                  | bmi          | entier   | 10-60 Kg/m<up>2</up> |
+| 5   | IGS II à l’admission | igsadm       | entier   | 6-150                |
+| 6   | Oxygénothérapie      | oxy          | entier   | 0-20 L/min           |
+| 7   | Ventilation invasive | vi           | facteur  | oui/non              |
+| 8   | Sédation             | sedation     | facteur  | oui/non              |
+| 9   | Curarisation         | curarisation | facteur  | oui/non/nsp          |
 
 ## Variables en pratique
 
 ### html
 
-&nbsp;
+ 
 
- 
-::::{.columns}
-:::{.column width="48%"} 
-```
+::::: columns
+::: {.column width="48%"}
+```         
   <p> Âge
  <input 'NUMBER' 
  name = 'age' 
@@ -688,46 +677,45 @@ pyramid(dd$age,dd$sexe,col.gender = c("pink","cyan"), main = "Pyramide des âges
   </p> 
 ```
 :::
-:::{.column width="48%"} 
-<p> <font size="7">Âge
- <input type ='NUMBER' 
+
+::: {.column width="48%"}
+<p><font size="7">Âge <input type ='NUMBER' 
   name = 'age' 
   min = '18' 
-  max = '110'></font>
-</p> 
+  max = '110'></font></p>
 :::
-::::
+:::::
 
 ## Variables en pratique : R
 
-&nbsp;
+ 
 
 ```{r stud, echo = TRUE}
 t.test(age~escarrej, data = tt, var.equal = FALSE)
 ```
 
-# Organiser son tableau
+# Organiser son tableau {background-color="lightblue"}
 
 ## Un grand rectangle
 
-- Un seul tableau (*si possible*)
-- Variables en colonne, individus/mesures en ligne
-- Que les données, pas de calcul etc.
-- Une ligne de titre, titres uniques
-- Pas de case vide
-
+-   Un seul tableau (*si possible*)
+-   Variables en colonne, individus/mesures en ligne
+-   Que les données, pas de calcul etc.
+-   Une ligne de titre, titres uniques
+-   Pas de case vide
 
 ## Titres, Sujets Variables
-![](images/tab1.png)
-<br>
+
+![](images/tab1.png) <br>
 
 . . .
 
 ![](images/tab2.png)
 
 ## Titres, Sujets Variables
- 
+
 ![](images/tab2.png)
+
 ```{r x1, echo = TRUE, eval = FALSE}
 t.test(SpO2_H1,SpO2_H2)
 ```
@@ -735,6 +723,7 @@ t.test(SpO2_H1,SpO2_H2)
 . . .
 
 ![](images/tab3.png)
+
 ```{r x2, echo = TRUE, eval = FALSE}
 t.test(spo2~heure)
 ```
@@ -744,7 +733,8 @@ t.test(spo2~heure)
 ```{r d1, echo = TRUE, eval = TRUE}
 sqrt(2)^2 == 2
 ```
-<HR> 
+
+<HR>
 
 . . .
 
@@ -757,8 +747,7 @@ kable(dfx) |>
 position = "center")
 ```
 
-
-# Que faire des données ?
+# Que faire des données ? {background-color="lightblue"}
 
 ## Tableau descriptif {.smaller}
 
@@ -779,129 +768,117 @@ tt |>
 position = "center")
 ```
 
+## Il n'y a pas que p\<5 % ! {.smaller}
 
-## Il n'y a pas que p<5 % ! {.smaller}
-::::{.columns} 
-:::{.column width="38%"} 
- ![](images/pcinq.jpg)
+::::: columns
+::: {.column width="38%"}
+![](images/pcinq.jpg)
 :::
-:::{.column width="58%"} 
-- Moyennes, écart-type
-- % ± Intervalle de confiance
-- Médiane, quartiles
- 
+
+::: {.column width="58%"}
+-   Moyennes, écart-type
+-   \% ± Intervalle de confiance
+-   Médiane, quartiles
+
 **Data mining**
 
-- Clustering
-- Analyse factorielle
-- Machine Learning
+-   Clustering
+-   Analyse factorielle
+-   Machine Learning
 :::
-::::
+:::::
 
+##  {background-color="grey10" background-image="images/data5.png" background-size="60%"}
 
+##  {background-color="grey10" background-image="images/carte.jpg" background-size="80%"}
 
-## {background-color="grey10" 
-   background-image="images/data5.png" 
-   background-size="60%"}
-   
-   
-## {background-color="grey10" 
-   background-image="images/carte.jpg" 
-   background-size="80%"}
+##  {background-color="grey10" background-image="images/echo.jpg" background-size="100%"}
 
-## {background-color="grey10" 
-   background-image="images/echo.jpg" 
-   background-size="100%"}
+## Des tests…
 
-
-## Des tests&hellip;
-::::{.columns}
-:::{.column width="48%"} 
-- t de Student
-- $\chi^2$
-- test non paramétrique de Wilcoxon
-- ANOVA
-- Coef de corrélation (Spearman ou Pearson)
-- test de Cochran-Mantel-Haenszel
+::::: columns
+::: {.column width="48%"}
+-   t de Student
+-   $\chi^2$
+-   test non paramétrique de Wilcoxon
+-   ANOVA
+-   Coef de corrélation (Spearman ou Pearson)
+-   test de Cochran-Mantel-Haenszel
 :::
-:::{.column width="48%"}
-$$f(x)  = \frac{1}{\sqrt{2 \pi\sigma^{2}}}e^{\frac{-(x-\mu)^2}{2\sigma^{2}}}$$]
- 
+
+::: {.column width="48%"}
+$$f(x)  = \frac{1}{\sqrt{2 \pi\sigma^{2}}}e^{\frac{-(x-\mu)^2}{2\sigma^{2}}}$$\]
+
 $$t^{n-1}_{1-\alpha/2} = \frac{|m_1-m_2|}{S^2\sqrt{\frac{1}{n_1}+\frac{1}{n_2}}}$$
- 
+
 $$\xi_{CMH} = { [ {\sum_{i=1}^K (A_i- {N_{1i} M_{1i}\over T_i}):::^2 } \over {\sum_{i=1}^K {N_{1i}N_{2i}M_{1i}M_{2i} \over T_i^2(T_i-1)}}}$$
 :::
-::::
+:::::
 
 ## Analyse simple
-  ![](images/anasimple.png)
 
+![](images/anasimple.png)
 
-## {background-color="grey10" 
-   background-image="images/bio1.png" 
-   background-size="90%"}
+##  {background-color="grey10" background-image="images/bio1.png" background-size="90%"}
 
-## {background-color="grey10" 
-   background-image="images/bio2.png" 
-   background-size="90%"}
-
+##  {background-color="grey10" background-image="images/bio2.png" background-size="90%"}
 
 ## Un ensemble de données
-  
-#### Régression (logistique ou linéaire ou &hellip;)
-  
-  <br>
-  
-  $$\text{escarre} = f_1(\text{age})+f_2(\text{alitement})+f_3(\text{igs2})+...+\varepsilon$$
 
+#### Régression (logistique ou linéaire ou …)
 
-## {background-color="grey10" 
-   background-image="images/multi.png" 
-   background-size="80%"}
+<br>
 
+$$\text{escarre} = f_1(\text{age})+f_2(\text{alitement})+f_3(\text{igs2})+...+\varepsilon$$
 
-## Un peu de recul&hellip;
-  
-  
+##  {background-color="grey10" background-image="images/multi.png" background-size="80%"}
+
+## Un peu de recul…
+
 $$IC_{95}= p \pm z_{\alpha/2}\sqrt{\frac{p(1-p)}{n}}$$
-  
-  <br>
-$$\mathbb{P}\left(-z_{\alpha/2} \leq
+
+<br> $$\mathbb{P}\left(-z_{\alpha/2} \leq
   \frac{\frac{X}{n}-p}{\sqrt{\frac{p(1-p)}{n}}} \leq
   z_{\alpha/2}\right)\thickapprox 1-\alpha$$
-  
 
-# Un peu de recul&hellip;
+# Un peu de recul…
+
 $$IC_{95}= p \pm z_{\alpha/2}\sqrt{\frac{p(1-p)}{n}}$$
-  
-  <br>
-  
-  ![](images/vingt.png)
 
-## p< 5 \ ???
+<br>
+
+![](images/vingt.png)
+
+## p\< 5  ???
+
 (images/pavlue1.png){.center}
 
-## p< 5 \ ???
+## p\< 5  ???
+
 ![](images/pavlue2.png){.center}
 
-## p< 5 \ ???
+## p\< 5  ???
+
 ![](images/pavlue3.png){.center}
 
 ## CONCLUSION 1
+
 ![](images/garbage.jpg){.center}
 
 ## CONCLUSION 2 {.center}
-  
+
 ![](images/eyes.png)
 
 ### Du bon sens
+
 ### Se méfier de tout
 
+## Il existe trois types de menteurs :
 
-## Il existe trois types de menteurs : 
-  
-  <BR>
-  
+<BR>
+
 ### les menteurs
+
 ### les fieffés menteurs
-### et les .rouge[statisticiens]
+
+### et les .rouge\[statisticiens\]
