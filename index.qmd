@@ -11,12 +11,13 @@ project:
 format: 
   revealjs: 
      theme: ["simple"]
+     embed-resources: true
 # chalkboard: true
 highlight-style: ayu-dark
 echo: false
 warning: false
 message: false
-cache: true
+cache: false
 ---
 
 
