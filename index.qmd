@@ -10,12 +10,9 @@ project:
   output-dir: "docs"
 format: 
   revealjs: 
-     theme: ["simple", style.scss]
-chalkboard: true
+     theme: ["simple"]
+# chalkboard: true
 highlight-style: ayu-dark
-editor: 
-  markdown: 
-     wrap: 72
 echo: false
 warning: false
 message: false
@@ -23,7 +20,7 @@ cache: true
 ---
 
 
-# De quoi on parle ?
+# De quoi on parle ? {background-color="lightblue"}
 
 
 
@@ -44,7 +41,7 @@ tt <- read_delim("patients.csv",show_col_types = FALSE) |>
 ```
 
 
-## Une idée, une thèse :
+## Une idée, une thèse : 
 <BR>
   
 > **Un sujet** Facteurs de risque d'escarre en réanimation<br>
@@ -55,7 +52,7 @@ tt <- read_delim("patients.csv",show_col_types = FALSE) |>
 
 > **Des outils** inadaptés
 
-## Au travail !
+## Au travail !{.center}
 
 ![](images/neurobiology.jpeg)
 
@@ -159,7 +156,6 @@ position = "center")
 - Plusieurs auteurs donc plus objective ?
 - Mises à jour prévues.
 
-&nbsp;
 
 **Evidence Based Medicine**
 
@@ -194,20 +190,14 @@ position = "center")
 :::
 :::{.column width="39%"}
   <BR>
- ![](images/experts.png)
+ ![](images/experts.png){.r-stretch}
 :::
 ::::
 
 ## Où chercher ?
 
-<img src="images/pubmed.jpg" alt="drawing" width="60%"/>
 
-### MEDLINE
-
-#### Base de donnée bibliographique sur :
-
-- la médecine **PUBMED**
-- surtout le génome **PUBGEN**
+ ![](images/pubmed.jpg){.absolute top="180" right="30" width="80%"}
   
 
 ## Système de recherche
@@ -231,25 +221,26 @@ position = "center")
   ![](images/bib2.jpg)
 :::
 ::::
+   
+##  {background-color="grey10" 
+   background-image="images/pubmed2.png" 
+   background-size="100%"}
+   
+##  {background-color="grey10" 
+   background-image="images/pubmed3.png" 
+   background-size="100%"}
 
-## MEDLINE
-![](images/pubmed1.png)
+##  {background-color="grey10" 
+   background-image="images/google.png" 
+   background-size="100%"}
 
-## MEDLINE
-![](images/pubmed2.png)
-
-## EN FRANÇAIS
-![](images/cismed.png)
-
-## GOOGLE SCHOLAR
-![](images/google.png)
-
-## ZOTERO
-![](images/zotero.png)
-
-
-## ?
-![](images/scihub.png)
+##  {background-color="grey10" 
+   background-image="images/zotero.png" 
+   background-size="100%"}
+   
+##  {background-color="grey10" 
+   background-image="images/scihub.png" 
+   background-size="100%"}
 
 ## Dernier contrôle
 
@@ -380,9 +371,6 @@ Procédures spécifiques
 - **D**iscussion
  
 
-## IMRAD
-
-![](images/imrad.png)
 
 
 ## Introduction
@@ -494,6 +482,8 @@ Interêt de la reperfusion précoce dans l'IdM<br>
 
 ## Traitements utilisés
 
+&nbsp;
+
 ### Enfin de la clinique !
  
  
@@ -518,11 +508,16 @@ Interêt de la reperfusion précoce dans l'IdM<br>
 
  
 ## Quelques tableaux
+
+&nbsp;
  
 - Description de la population
 - Comparaison des deux groupes
 
 ## Quelques figures
+
+&nbsp;
+
  
 ![](images/graphs.png)
 
@@ -640,43 +635,19 @@ pyramid(dd$age,dd$sexe,col.gender = c("pink","cyan"), main = "Pyramide des âges
 
 ## Mais quelle est la question ? {background-color="grey10" background-image="images/42.jpg" background-size="100%"}
 
-
-# Questions & Variables
-  
-  <BR>
   
 ## VARIABLES
 
 
 
-> **Variable de tri** Escarre présente<BR> *OUI/NON*
+> **Variable de tri** Escarre présente<BR> *OUI/NON*\n
   
 > **Variable principale** Alitement prolongé *OUI/NON*
   
 > **Variables explicatives** Age, Sexe, IGS II etc.
 
 
-## Critère de jugement
-  
-### Ou variable de tri&hellip;
 
-&nbsp;
-
-
-::::{.columns}
-:::{.column width="48%"} 
-#### Simple
- 
-- Vivant / Mort
-- Rechute / Pas rechute
-:::
-:::{.column width="48%"} 
-##### Critère composite / score
-  
-- Rechute + décès
-- ± Autonomie&hellip;
-:::
-::::
 
 
 # Liste de variables {.smaller}
@@ -717,16 +688,18 @@ pyramid(dd$age,dd$sexe,col.gender = c("pink","cyan"), main = "Pyramide des âges
 ```
 :::
 :::{.column width="48%"} 
-<p> Âge
+<p> <font size="7">Âge
  <input type ='NUMBER' 
   name = 'age' 
   min = '18' 
-  max = '110'>
+  max = '110'></font>
 </p> 
 :::
 ::::
 
 ## Variables en pratique : R
+
+&nbsp;
 
 ```{r stud, echo = TRUE}
 t.test(age~escarrej, data = tt, var.equal = FALSE)
@@ -826,20 +799,17 @@ position = "center")
 
 
 
-## &nbsp;{background-color="grey10" 
+## {background-color="grey10" 
    background-image="images/data5.png" 
-   background-size="70%"}
+   background-size="60%"}
    
-## &nbsp;{background-color="grey10" 
-   background-image="images/claas.png" 
-   background-size="80%"}
    
-## &nbsp;{background-color="grey10" 
+## {background-color="grey10" 
    background-image="images/carte.jpg" 
    background-size="80%"}
 
-## &nbsp;{background-color="grey10" 
-   background-image="images/echo.jpg)" 
+## {background-color="grey10" 
+   background-image="images/echo.jpg" 
    background-size="100%"}
 
 
@@ -854,9 +824,9 @@ position = "center")
 - test de Cochran-Mantel-Haenszel
 :::
 :::{.column width="48%"}
-  .small[$$f(x)  = \frac{1}{\sqrt{2 \pi\sigma^{2}}}e^{\frac{-(x-\mu)^2}{2\sigma^{2}}}$$]
+$$f(x)  = \frac{1}{\sqrt{2 \pi\sigma^{2}}}e^{\frac{-(x-\mu)^2}{2\sigma^{2}}}$$]
  
-.small[$$t^{n-1}_{1-\alpha/2} = \frac{|m_1-m_2|}{S^2\sqrt{\frac{1}{n_1}+\frac{1}{n_2}}}$$]
+$$t^{n-1}_{1-\alpha/2} = \frac{|m_1-m_2|}{S^2\sqrt{\frac{1}{n_1}+\frac{1}{n_2}}}$$
  
 $$\xi_{CMH} = { [ {\sum_{i=1}^K (A_i- {N_{1i} M_{1i}\over T_i}):::^2 } \over {\sum_{i=1}^K {N_{1i}N_{2i}M_{1i}M_{2i} \over T_i^2(T_i-1)}}}$$
 :::
@@ -866,10 +836,14 @@ $$\xi_{CMH} = { [ {\sum_{i=1}^K (A_i- {N_{1i} M_{1i}\over T_i}):::^2 } \over {\s
   ![](images/anasimple.png)
 
 
-  ![](images/bio1.png)
+## {background-color="grey10" 
+   background-image="images/bio1.png" 
+   background-size="90%"}
 
+## {background-color="grey10" 
+   background-image="images/bio2.png" 
+   background-size="90%"}
 
-  ![](images/bio2.png)
 
 ## Un ensemble de données
   
@@ -880,10 +854,10 @@ $$\xi_{CMH} = { [ {\sum_{i=1}^K (A_i- {N_{1i} M_{1i}\over T_i}):::^2 } \over {\s
   $$\text{escarre} = f_1(\text{age})+f_2(\text{alitement})+f_3(\text{igs2})+...+\varepsilon$$
 
 
+## {background-color="grey10" 
+   background-image="images/multi.png" 
+   background-size="80%"}
 
-
-
-  .center[![](images/multi.png)]
 
 ## Un peu de recul&hellip;
   
@@ -904,20 +878,20 @@ $$IC_{95}= p \pm z_{\alpha/2}\sqrt{\frac{p(1-p)}{n}}$$
   ![](images/vingt.png)
 
 ## p< 5 \ ???
-  .right[![](images/pavlue1.png)]
+(images/pavlue1.png){.center}
 
 ## p< 5 \ ???
-  .right[![](images/pavlue2.png)]
+![](images/pavlue2.png){.center}
 
 ## p< 5 \ ???
-  .right[![](images/pavlue3.png)]
+![](images/pavlue3.png){.center}
 
 ## CONCLUSION 1
-  .center[![](images/garbage.jpg)]
+![](images/garbage.jpg){.center}
 
-# CONCLUSION 2
+## CONCLUSION 2 {.center}
   
-  .center[![](images/eyes.png)]
+![](images/eyes.png)
 
 ### Du bon sens
 ### Se méfier de tout
