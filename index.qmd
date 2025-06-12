@@ -11,7 +11,7 @@ project:
 format: 
   revealjs: 
      theme: ["simple"]
-     embed-resources: true
+     embed-resources: false
 # chalkboard: true
 highlight-style: ayu-dark
 echo: false
